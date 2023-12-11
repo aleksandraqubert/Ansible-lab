@@ -10,7 +10,7 @@ Description=Ansible_lab
 WantedBy=multi-user.target
 
 [Service]
-ExecStart=/usr/bin/java -jar /opt/sample/service.jar
+ExecStart=java -jar {{ app_dir }}/{{ app_file }}
 User=aleks
-Environment=PORT="8080"
+Environment=PORT={{ app_port }}
 Restart=always
